@@ -2,7 +2,7 @@
     include_once './includes/_header.php'
 ?>
 
-<main>Index</main>
+<main>Editoria</main>
 
 <?php
     include_once './includes/_footer.php'
