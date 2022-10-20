@@ -17,10 +17,10 @@
                 <a href="./index.php">Home</a>
             </div>
             <div>
-                <a href="./pages/editoria.php">Editoria</a>
+                <a href="./editoria.php">Editoria</a>
             </div>
             <div>
-                <a href="./pages/noticia.php">Notícia</a>
+                <a href="./noticia.php">Notícia</a>
             </div>
             <div>
                 <a href="#">Lorem</a>
