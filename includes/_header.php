@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Jornal da ciência</title>
 </head>
-<body>
+<body-container-fluid>
     
     <header>
         <h1>Jornal ciência</h1>
