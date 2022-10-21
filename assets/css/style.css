@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
 }
 
 a{
@@ -17,6 +16,7 @@ a:hover{
 body{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
@@ -28,6 +28,7 @@ header{
     gap: 5px;
     align-items: center;
     background-color: #010024;
+    color: white;
 }
 
 nav{
@@ -48,12 +49,40 @@ nav div a:hover{
     font-size: 1.25em;
 }
 
-.main{
-    border: 1px solid green;
-    height: 500px;
+main{
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .noticias{
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main .noticias article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 3px solid black;
+}
+
+main .noticias article:hover{
+    border: 3px solid red;
+    cursor: pointer;
+}
+
+main .ads{
+    width: 20%;
+    height: 100%;
+    border: 1px solid red;
 }
 
 footer{
+    color: white;
     padding: 20px;
     background-color: #010024;
     display: flex;

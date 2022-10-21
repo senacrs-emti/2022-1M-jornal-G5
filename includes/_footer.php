@@ -1,3 +1,4 @@
+</body>
     <footer>
         <div id="footer_title">
             <h3>
