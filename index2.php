@@ -13,7 +13,7 @@
         $autor = $_POST['autor'];
         $data_e_hora = date('d/m/Y H:i:s');
 
-        $sql = "INSERT INTO postagens VALUES";
+        $sql = "INSERT INTO posts VALUES";
         $sql .= "('$titulo', '$subtitulo', '$postagem', '$autor', '$categoria', '$data_e_hora', '0')";
         mysqli_query($conexao,$sql);
         mysqli_close($conexao);

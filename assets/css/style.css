@@ -5,7 +5,6 @@
     color: black;
 }
 
-/*
 a{
     color: white;
 }
@@ -110,7 +109,7 @@ footer{
 #footer_names p{
     margin: 0;
 }
-*/
+
 .noticias{
     float: left;
     display: block;

@@ -2,7 +2,7 @@
     include_once './includes/_header.php';
     include_once('config.php');
 
-    $sql = "SELECT * FROM postagens ORDER BY Data_e_hora DESC";
+    $sql = "SELECT * FROM posts ORDER BY Data_e_hora DESC";
     $result = $conexao->query($sql);
 
     while($user_data = mysqli_fetch_assoc($result)){
