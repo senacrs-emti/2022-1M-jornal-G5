@@ -1,28 +1,3 @@
-<?php
-
-    if(isset($_POST['submit'])){
-        include_once('./includes/_config.php');
-
-        date_default_timezone_set('America/Sao_Paulo');
-
-        $id_sql = "SELECT MAX(Id) FROM posts";
-        $id = $conexao->query($id_sql);
-        $id2 = mysqli_fetch_assoc($id);
-        $id_new = $id2['MAX(Id)'] + 1;
-        $categoria = $_POST['categoria'];
-        $titulo = $_POST['titulo'];
-        $subtitulo = $_POST['subtitulo'];
-        $categoria = $_POST['categoria'];
-        $postagem = $_POST['postagem'];
-        $autor = $_POST['autor'];
-        $data_e_hora = date('d/m/Y H:i:s');
-     
-        $sql = "INSERT INTO posts VALUES";
-        $sql .= "('$id_new', '$titulo', '$subtitulo', '$postagem', '$autor', '$categoria', '$data_e_hora', '0')";
-        $result = $conexao->query($sql);
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +50,7 @@
     </style>
 </head>
 <body>
-    <form action="intern.php" method="post" id="formulario">
+    <form action="add.php" method="post" id="formulario">
         <div>
             <label for="categoria">Selecione a categoria:</label>
             <select name="categoria">
@@ -87,19 +62,19 @@
         </div>
         <div>
             <label for="titulo">Digite o título:</label>
-            <input type="text" name="titulo" id="titulo">
+            <input type="text" name="titulo" id="titulo" required>
         </div>
         <div>
             <label for="subtitulo">Digite o subtítulo:</label>
-            <input type="text" name="subtitulo" id="subtitulo">
+            <input type="text" name="subtitulo" id="subtitulo" required>
         </div>
         <div>
             <label for="postagem">Digite sua postagem aqui:</label>
-            <textarea name="postagem" id="postagem" cols="30" rows="10"></textarea>
+            <textarea name="postagem" id="postagem" cols="30" rows="10" required></textarea>
         </div>
         <div>
             <label for="autor">Autor:</label>
-            <input type="text" name="autor" id="autor">
+            <input type="text" name="autor" id="autor" required>
         </div>        
         <input type="submit" name="submit" id="submit">
     </form>
@@ -111,6 +86,8 @@
                 <th>Título</th>
                 <th>Categoria</th>
                 <th>Views</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -126,6 +103,8 @@
                         <td>$user_data[Titulo]</td>
                         <td>$user_data[Categoria]</td>
                         <td>$user_data[Views]</td>
+                        <td><a href='editar.php?id=$user_data[Id]'>Editar</a></td>
+                        <td><a href='excluir.php?id=$user_data[Id]'>Excluir</a></td>
                         </tr>
                     ";
                 };
