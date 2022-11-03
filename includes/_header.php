@@ -18,19 +18,25 @@
                 <a href="./index.php">Home</a>
             </div>
             <div>
-                <a href="./noticias.php">Notícias</a>
+                <a href="./index.php?page=Notícia">Notícias</a>
             </div>
             <div>
-                <a href="./opinioes.php">Opiniões</a>
+                <a href="./index.php?page=Artigo de opinião">Opiniões</a>
             </div>
             <div>
-                <a href="./cronicas.php">Crônicas</a>
+                <a href="./index.php?page=Crônica">Crônicas</a>
             </div>
             <div>
-                <a href="./charges.php">Charges</a>
+                <a href="./index.php?page=Charge">Charges</a>
             </div>
             <div>
                 <a href="./forum.php">Fórum</a>
+            </div>
+            <div>
+                <a href="./entrar.php?page=Login">Login</a>
+            </div>
+            <div>
+                <a href="./db_entrar.php?page=Sair">Sair</a>
             </div>
         </nav>
     </header>
