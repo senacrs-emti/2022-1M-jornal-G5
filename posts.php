@@ -26,7 +26,48 @@
                         <h4>$post[Subtitulo]</h4>
                         <hr>
                         <p>$post[Postagem]</p>
+                        <hr>
+                        <h3>Mais Artigos:</h3>";
+
+                    $sql = "SELECT * FROM posts WHERE `Id` != '$Id' ORDER BY Id DESC";
+                    $result = $conexao->query($sql);
+                    $cont = 0;
+                    while(($user_data = mysqli_fetch_assoc($result)) and ($cont < 4)){
+                        echo "<article onclick='redirect($user_data[Id])'>
+                        <h2>$user_data[Titulo]</h2>
+                        </article>";
+                        $cont = $cont + 1;
+                    };
+
+                    echo"
+                        <hr><h3>Comentários:</h3>
                     ";
+                    //session_start();
+                        if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
+                            unset($_SESSION['nome']);
+                            unset($_SESSION['email']);
+                            unset($_SESSION['veriify']);
+                            echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4>';
+                        }else{
+                            $nome = $_SESSION['nome']['Nome'];
+                            echo "<form action='db_posts.php?page=comentario    ' method='post' id='formulario'>
+                            <h5>$nome</h5>
+                            <input type='hidden' name='Id da postagem' value=$Id>
+                            <textarea name='Comentario' style='width:100%'></textarea>
+                            <input type='submit' name='submit' id='submit' value='Comentar'>
+                            </form>
+                            <hr>";
+                        };
+
+                        $sql = "SELECT * FROM comentarios WHERE `Id da postagem` = '$Id' ORDER BY Id DESC";
+                        $result = $conexao->query($sql);
+                        while($user_data = mysqli_fetch_assoc($result)){
+                            echo "<div>
+                            <h5>$user_data[Autor]</h5>
+                            <p style='float:left'>$user_data[Comentario]</p><br>
+                            <hr>
+                            </div>";
+                        };
                 };
             };
         ?>

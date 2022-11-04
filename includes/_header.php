@@ -29,14 +29,20 @@
             <div>
                 <a href="./index.php?page=Charge">Charges</a>
             </div>
-            <div>
-                <a href="./forum.php">Fórum</a>
-            </div>
-            <div>
-                <a href="./entrar.php?page=Login">Login</a>
-            </div>
-            <div>
-                <a href="./db_entrar.php?page=Sair">Sair</a>
-            </div>
+            <?php
+                session_start();
+                if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
+                    unset($_SESSION['nome']);
+                    unset($_SESSION['email']);
+                    unset($_SESSION['veriify']);
+                    echo'<div>
+                    <a href="./entrar.php?page=Login">Login</a>
+                    </div>';
+                }else{
+                    echo'<div>
+                    <a href="./db_entrar.php?page=Sair">Sair</a>
+                    </div>';
+                };
+            ?>
         </nav>
     </header>

@@ -64,14 +64,15 @@ main .noticias{
 }
 
 main .noticias article{
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 main .noticias article:hover{
-    border: 3px solid red;
+    border: 2px solid red;
     cursor: pointer;
 }
 

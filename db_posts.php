@@ -2,7 +2,7 @@
     session_start();
     function user_out(){
         unset($_SESSION['email']);
-        unset($_SESSION['veriify']);
+        unset($_SESSION['verify']);
         unset($_SESSION['nome']);
         header("location: index.php");   
     };
@@ -14,10 +14,10 @@
     if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
         user_out();
     }else{
+        include_once('./includes/_config.php');
         if($_SESSION['verify'] == 'admin'){
             if (isset($_GET['page'])){
                 $page = $_GET['page'];
-                include_once('./includes/_config.php');
 
                 if($page == 'adicionar'){
                     if(isset($_POST['submit'])){                
@@ -56,15 +56,38 @@
                         $Id = $_GET['id'];
                         $sql = "DELETE FROM `posts` WHERE `Id` = $Id;";
                         $result = $conexao->query($sql);
+                        $sql = "DELETE FROM `comentarios` WHERE `Id da postagem` = $Id;";
+                        $result = $conexao->query($sql);
                     };
                     redirect_intern();
                 };
                 redirect_intern();
             };
             redirect_intern();
-        }else{
+        }
+        if (isset($_GET['page'])){
+            $page = $_GET['page'];
+
+            if($page == 'comentario'){
+                if(isset($_POST['submit'])){
+                    $Id_da_postagem = $_POST['Id_da_postagem'];
+                    $Comentario = $_POST['Comentario'];
+                    $Autor = $_SESSION['nome']['Nome'];
+                    $id_sql = "SELECT MAX(Id) FROM comentarios";
+                    $id = $conexao->query($id_sql);
+                    $id2 = mysqli_fetch_assoc($id);
+                    $Id = $id2['MAX(Id)'] + 1;
+        
+                    $sql = "INSERT INTO comentarios VALUES";
+                    $sql .= "('$Id_da_postagem', '$Comentario', '$Autor', '$Id')";
+                    $result = $conexao->query($sql);
+                    header("location: posts.php?id=$Id_da_postagem");   
+                }else{
+                    header("location: index.php");  
+                };
+            };
+        }else {
             user_out();
         };
     };
-
 ?>
