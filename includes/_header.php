@@ -39,6 +39,12 @@
                     <a href="./entrar.php?page=Login">Login</a>
                     </div>';
                 }else{
+                    if($_SESSION['verify'] == 'admin'){
+                        echo'<div>
+                        <a href="./postar.php?page=postar">Interno</a>
+                        </div>';
+                    };
+                    
                     echo'<div>
                     <a href="./db_entrar.php?page=Sair">Sair</a>
                     </div>';

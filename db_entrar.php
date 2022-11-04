@@ -52,7 +52,7 @@
                     $verify = $conexao->query($verify);
                     $verify = mysqli_fetch_assoc($verify);
                     $_SESSION['verify'] = $verify['Permissão'];
-                    header("location: postar.php?page=postar");
+                    header("location: index.php");
                 }else{
                     user_out();
                     header("location: entrar.php?page=Login%20errado");
@@ -63,6 +63,29 @@
         }elseif($page == 'Sair'){
             user_out();
             header("location: index.php");
+        }elseif($page == 'Mudar permissao'){
+            session_start();
+            if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
+                user_out();
+            }else{
+                if (isset($_GET['email'])){
+                    $email = $_GET['email'];
+                    $permissao = "SELECT Permissão FROM usuarios WHERE Email='$email'";
+                    $permissao = $conexao->query($permissao);
+                    $permissao = mysqli_fetch_assoc($permissao);
+
+                    if($permissao['Permissão'] == 'admin'){
+                        $permissao = "UPDATE usuarios SET `Permissão` = 'user' WHERE Email='$email'";
+                        $permissao = $conexao->query($permissao);
+                    }else{
+                        $permissao = "UPDATE usuarios SET `Permissão` = 'admin' WHERE Email='$email'";
+                        $permissao = $conexao->query($permissao);
+                    }
+                    header("location: postar.php?page=postar");
+                }else{
+                    header("location: index.php");
+                };
+            };
         }else{
             header("location: index.php");
         };

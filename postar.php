@@ -93,7 +93,7 @@
                                 <input type='text' name='autor' id='autor' value='$nome' required>
                             </div>        
                             <input type='submit' name='submit' id='submit'>
-                        </form>
+                        </form><br>
                         <table>
                             <thead>
                                 <tr>
@@ -120,6 +120,30 @@
                                 <td>$user_data[Views]</td>
                                 <td><a href='postar.php?page=editar&id=$user_data[Id]'>Editar</a></td>
                                 <td><a href='db_posts.php?page=excluir&id=$user_data[Id]'>Excluir</a></td>
+                                </tr>
+                                ";
+                            };
+                        echo '</tbody></table><br>';
+                        echo "<table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Permissão</th>
+                                    <th>Mudar Permissão</th>
+                                </tr>
+                            </thead>
+                            <tbody>";
+
+                        $sql = "SELECT * FROM usuarios ORDER BY Permissão ASC";
+                        $result = $conexao->query($sql);
+                        while($user_data = mysqli_fetch_assoc($result)){
+                            echo "
+                                <tr>
+                                <td>$user_data[Nome]</td>
+                                <td>$user_data[Email]</td>
+                                <td>$user_data[Permissão]</td>
+                                <td><a href='db_entrar.php?page=Mudar%20permissao&email=$user_data[Email]'>Mudar permissão</a></td>
                                 </tr>
                                 ";
                             };

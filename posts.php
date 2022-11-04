@@ -53,7 +53,7 @@
                             echo "<form action='db_posts.php?page=comentario    ' method='post' id='formulario'>
                             <h5>$nome</h5>
                             <input type='hidden' name='Id da postagem' value=$Id>
-                            <textarea name='Comentario' style='width:100%'></textarea>
+                            <textarea name='Comentario' style='width:100%' required></textarea>
                             <input type='submit' name='submit' id='submit' value='Comentar'>
                             </form>
                             <hr>";
@@ -62,9 +62,9 @@
                         $sql = "SELECT * FROM comentarios WHERE `Id da postagem` = '$Id' ORDER BY Id DESC";
                         $result = $conexao->query($sql);
                         while($user_data = mysqli_fetch_assoc($result)){
-                            echo "<div>
+                            echo "<div class='comentario'>
                             <h5>$user_data[Autor]</h5>
-                            $user_data[Comentario]<br>
+                            $user_data[Comentario]
                             <hr>
                             </div>";
                         };
