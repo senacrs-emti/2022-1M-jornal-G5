@@ -42,12 +42,13 @@
                     redirect_intern();
                 }elseif($page == 'atualizar'){
                     if(isset($_POST['submit'])){
+                        $Id = $_POST['Id'];
                         $titulo = $_POST['titulo'];
                         $subtitulo = $_POST['subtitulo'];
                         $postagem = $_POST['postagem'];
                         $autor = $_POST['autor'];
                      
-                        $sql = "UPDATE posts SET Titulo='$titulo', Subtitulo='$subtitulo', Postagem='$postagem', Autor='$autor'";
+                        $sql = "UPDATE posts SET Titulo='$titulo', Subtitulo='$subtitulo', Postagem='$postagem', Autor='$autor' WHERE `Id` = $Id";
                         $result = $conexao->query($sql);
                     };
                     redirect_intern();

@@ -82,7 +82,7 @@
                             </div>
                             <div>
                                 <label for='subtitulo'>Digite o subtítulo:</label>
-                                <input type='text' name='subtitulo' id='subtitulo' required>
+                                <input type='text' name='subtitulo' id='subtitulo'>
                             </div>
                             <div>
                                 <label for='postagem'>Digite sua postagem aqui:</label>
@@ -130,16 +130,16 @@
                             $sql = "SELECT * FROM posts WHERE `Id` = $Id";
                             $result = $conexao->query($sql);
                             $post = mysqli_fetch_assoc($result);
-
                             echo "
                                 <form action='db_posts.php?page=atualizar' method='post' id='formulario'>
+                                    <input type='hidden' name='Id' value='$Id'>
                                     <div>
                                         <label for='titulo'>Digite o título:</label>
                                         <input type='text' name='titulo' id='titulo' value='$post[Titulo]' required>
                                     </div>
                                     <div>
                                         <label for='subtitulo'>Digite o subtítulo:</label>
-                                        <input type='text' name='subtitulo' id='subtitulo' value='$post[Subtitulo]' required>
+                                        <input type='text' name='subtitulo' id='subtitulo' value='$post[Subtitulo]'>
                                     </div>
                                     <div>
                                         <label for='postagem'>Digite sua postagem aqui:</label>

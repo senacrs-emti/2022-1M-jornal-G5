@@ -25,7 +25,7 @@
                         <h2>$post[Titulo]</h2>
                         <h4>$post[Subtitulo]</h4>
                         <hr>
-                        <p>$post[Postagem]</p>
+                        $post[Postagem]
                         <hr>
                         <h3>Mais Artigos:</h3>";
 
@@ -64,7 +64,7 @@
                         while($user_data = mysqli_fetch_assoc($result)){
                             echo "<div>
                             <h5>$user_data[Autor]</h5>
-                            <p style='float:left'>$user_data[Comentario]</p><br>
+                            $user_data[Comentario]<br>
                             <hr>
                             </div>";
                         };
