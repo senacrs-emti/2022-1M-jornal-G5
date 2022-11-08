@@ -6,13 +6,16 @@
     <div class="noticias">
         <?php
             include_once('./includes/_config.php');
+            include_once('./includes/_functions.php');
 
             if (isset($_GET['id'])) {
                 $Id = $_GET['id'];
+
                 $sql = "SELECT * FROM posts WHERE `Id` = $Id";
                 $result = $conexao->query($sql);
                 $post = mysqli_fetch_assoc($result);
-                if($post == ''){
+
+                if(empty($post)){
                     echo "<h1>Inexistente</h1>";
                 }else{
                     $views = $post['Views'];
@@ -23,11 +26,18 @@
                     echo "
                         <h6>$post[Autor] | $post[Data_e_hora] | $post[Categoria] | $views_novas</h6>
                         <h2>$post[Titulo]</h2>
-                        <h4>$post[Subtitulo]</h4>
+                    ";
+                    
+                    if(!empty($post['Subtitulo'])){
+                        echo "<h4>$post[Subtitulo]</h4>";
+                    };
+
+                    echo"
                         <hr>
                         $post[Postagem]
                         <hr>
-                        <h3>Mais Artigos:</h3>";
+                        <h3>Mais Artigos:</h3>
+                    ";
 
                     $sql = "SELECT * FROM posts WHERE `Id` != '$Id' ORDER BY Id DESC";
                     $result = $conexao->query($sql);
@@ -42,32 +52,34 @@
                     echo"
                         <hr><h3>Comentários:</h3>
                     ";
-                    //session_start();
-                        if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
-                            unset($_SESSION['nome']);
-                            unset($_SESSION['email']);
-                            unset($_SESSION['veriify']);
-                            echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4>';
-                        }else{
-                            $nome = $_SESSION['nome']['Nome'];
-                            echo "<form action='db_posts.php?page=comentario    ' method='post' id='formulario'>
-                            <h5>$nome</h5>
-                            <input type='hidden' name='Id da postagem' value=$Id>
-                            <textarea name='Comentario' style='width:100%' required></textarea>
-                            <input type='submit' name='submit' id='submit' value='Comentar'>
-                            </form>
-                            <hr>";
-                        };
 
-                        $sql = "SELECT * FROM comentarios WHERE `Id da postagem` = '$Id' ORDER BY Id DESC";
-                        $result = $conexao->query($sql);
-                        while($user_data = mysqli_fetch_assoc($result)){
-                            echo "<div class='comentario'>
-                            <h5>$user_data[Autor]</h5>
-                            $user_data[Comentario]
-                            <hr>
-                            </div>";
-                        };
+                    if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
+                        unset($_SESSION['nome']);
+                        unset($_SESSION['email']);
+                        unset($_SESSION['veriify']);
+                        echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4><hr>';
+                    }else{
+                        $nome = $_SESSION['nome']['Nome'];
+                        echo "
+                        <form action='db_posts.php?page=comentario' method='post' id='formulario'>
+                        <h5>$nome</h5>
+                        <input type='hidden' name='Id da postagem' value=$Id>
+                        <textarea name='Comentario' style='width:100%' required></textarea>
+                        <input type='submit' name='submit' id='submit' value='Comentar'>
+                        </form>
+                        <hr>
+                        ";
+                    };
+
+                    $sql = "SELECT * FROM comentarios WHERE `Id da postagem` = '$Id' ORDER BY Id DESC";
+                    $result = $conexao->query($sql);
+                    while($user_data = mysqli_fetch_assoc($result)){
+                        echo "<div class='comentario'>
+                        <h5>$user_data[Autor]</h5>
+                        $user_data[Comentario]
+                        <hr>
+                        </div>";
+                    };
                 };
             };
         ?>
