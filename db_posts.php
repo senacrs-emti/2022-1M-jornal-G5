@@ -1,9 +1,7 @@
 <?php
     session_start();
     function user_out(){
-        unset($_SESSION['email']);
-        unset($_SESSION['verify']);
-        unset($_SESSION['nome']);
+        session_destroy();
         header("location: index.php");   
     };
 

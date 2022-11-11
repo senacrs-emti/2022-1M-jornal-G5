@@ -54,9 +54,7 @@
 <?php
     session_start();
         if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
-            unset($_SESSION['nome']);
-            unset($_SESSION['email']);
-            unset($_SESSION['veriify']);
+            session_destroy();
             header("location: index.php");
         }else{
             if($_SESSION['verify'] == 'admin'){

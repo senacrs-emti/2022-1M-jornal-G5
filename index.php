@@ -16,12 +16,13 @@
 
                 $result = $conexao->query($sql);
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<article onclick='redirect($user_data[Id])'>
+                    echo"
+                    <article onclick='redirect($user_data[Id])'>
                         <p>$user_data[Categoria]</p>
                         <h2>$user_data[Titulo]</h2>
                         <small>$user_data[Subtitulo]</small>
-                    </article>";
-                };
+                    </article>"; 
+                }; 
             };
 
             if (isset($_GET['page'])) {

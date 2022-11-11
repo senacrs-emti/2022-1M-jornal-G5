@@ -6,7 +6,6 @@
     <div class="noticias">
         <?php
             include_once('./includes/_config.php');
-            include_once('./includes/_functions.php');
 
             if (isset($_GET['id'])) {
                 $Id = $_GET['id'];
@@ -54,9 +53,7 @@
                     ";
 
                     if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
-                        unset($_SESSION['nome']);
-                        unset($_SESSION['email']);
-                        unset($_SESSION['veriify']);
+                        session_destroy();
                         echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4><hr>';
                     }else{
                         $nome = $_SESSION['nome']['Nome'];
@@ -74,14 +71,17 @@
                     $sql = "SELECT * FROM comentarios WHERE `Id da postagem` = '$Id' ORDER BY Id DESC";
                     $result = $conexao->query($sql);
                     while($user_data = mysqli_fetch_assoc($result)){
-                        echo "<div class='comentario'>
+                        echo 
+                        "<div class='comentario'>
                         <h5>$user_data[Autor]</h5>
                         $user_data[Comentario]
                         <hr>
                         </div>";
                     };
                 };
-            };
+            }else{
+                header("location: index.php");
+            }
         ?>
     </div>
     <div class="ads">

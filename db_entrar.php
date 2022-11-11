@@ -2,9 +2,7 @@
 
     function user_out(){
         session_start(); 
-        unset($_SESSION['email']);
-        unset($_SESSION['verify']);
-        unset($_SESSION['nome']);
+        session_destroy();
     };
 
     if (isset($_GET['page'])){
