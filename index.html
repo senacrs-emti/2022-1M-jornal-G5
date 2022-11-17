@@ -26,18 +26,23 @@
     <header class="col-12">
       <div class="row d-flex justify-content-between pt-2 pb-1 px-3">
         <h4>Jornal da Ciência</h4>
-        <div class="d-flex border">
-          <h4 class="mx-2">Interno</h4>
-          <h4 class="mx-2">Sair</h4>
-        </div>
+        <div class="d-flex align-items-center border">
+          <h4 class="mx-2" id="botaointerno">Interno</h4>
+          <h4 class="mx-2" id="botaosair">Sair</h4>
+          <a class="d-none" id="botaomenu" onclick="botao_menu()">
+            <img width="40px" src="https://cdn-icons-png.flaticon.com/512/16/16033.png" alt="botão-menu">
+          </a>
+          </div>
       </div>
-      <nav class="row d-flex justify-content-center py-2 border">
-        <div class="col-8 d-flex justify-content-around border">
+      <nav class="row d-flex justify-content-center py-2 border" id="menu_nav">
+        <div class="col-12 col-md-8 d-flex flex-column flex-md-row justify-content-around border">
           <a href="./index.php">Home</a>
           <a href="./index.php?page=Notícia">Notícias</a>
           <a href="./index.php?page=Artigo de opinião">Opiniões</a>
           <a href="./index.php?page=Crônica">Crônicas</a>
           <a href="./index.php?page=Charge">Charges</a>
+          <a class="d-none" id="botaointerno2" href="./postar.php?page=postar">Interno</a>
+          <a class="d-none" id="botaosair2" href="./db_entrar.php?page=Sair">Sair</a>
         </div>
       </nav>
     </header>
@@ -71,9 +76,42 @@
         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maxime, hic deserunt sint vitae saepe similique nostrum mollitia voluptatum animi porro voluptate illo impedit error distinctio culpa doloribus? Nemo, quia!</p>
       </div>
     </aside>
+    <footer class="col-12 bg-primary">
+      <div class="row py-1 px-2 d-flex justify-content-center justify-content-md-start">
+        <h3>Nome do Grupo</h3>
+      </div>
+      <div class="row d-flex flex-column flex-md-row">
+        <div class="col-12 col-md-4 border d-flex align-items-center my-3 my-md-0">
+          <div class="row d-flex justify-content-around align-items-center">
+            <div class="col-3">
+              <a href="#">
+              <img width="100%" src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-2-1.png" alt="twitter-logo">
+              </a>
+            </div>
+            <div class="col-3">
+              <a href="#">
+              <img width="100%" src="https://i2.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente13.png?fit=696%2C696&ssl=1" alt="instagram-logo">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center my-3 my-md-0 border">
+          <img width="100%" src="https://portoalegre.wordcamp.org/2018/files/2018/03/senac.png" alt="senac-logo">
+        </div>
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center my-3 my-md-0 border">
+          <p>Arthur Fetzner</p>
+          <p>Artur Teixeira</p>
+          <p>Augusto Rodrigues</p>
+          <p>Henrique Lima</p>
+          <p>Lucas Vizeu</p>
+          <p>Ruda Bandrão</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
   </body>
+  <script src="./assets/js/script.js"></script>
 </html>
