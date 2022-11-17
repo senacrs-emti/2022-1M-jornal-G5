@@ -13,139 +13,12 @@ a:hover{
     color: white;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-header{
-    width: 100%;
-    padding: 0.9em;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    background-color: #010024;
+nav div a{
     color: white;
-}
-
-nav{
-    font-size: 1.2em;
-    display: flex;
-    gap: 15px;
-}
-
-nav div{
-    width: 80px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav div a:hover{
-    font-size: 1.25em;
-}
-
-main{
-    width: 100%;
-    padding: 2%;
-    display: flex;
-    justify-content: space-between;
-}
-
-main .noticias{
-    width: 78%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-main p{
-    text-align: justify;
-}
-
-main .noticias article{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 2px solid black;
-}
-
-main .noticias article:hover{
-    border: 2px solid red;
-    cursor: pointer;
-}
-
-main .ads{
-    width: 20%;
-    height: 100%;
-    border: 1px solid red;
 }
 
 .comentario img{
     width: 100%;
-}
-
-footer{
-    color: white;
-    padding: 20px;
-    background-color: #010024;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#footer_title{
-    border-bottom: 1px solid white;
-}
-
-#footer_content{
-    display: flex;
-    justify-content: space-between;
-}
-
-#footer_content div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#footer_social{
-    gap: 25px;
-    width: 30%;
-}
-
-#footer_social img{
-    width: 14%;
-    aspect-ratio: 1/1;
-}
-
-#footer_social img:hover{
-    filter: invert(50%);
-    cursor: pointer;
-}
-
-#footer_img-center{
-    width: 20%;
-}
-
-#footer_img{
-    width: 100%;
-}
-
-#footer_names{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 30%;
-}
-
-#footer_names p{
-    margin: 0;
 }
 
 .noticias{
@@ -160,4 +33,12 @@ footer{
 .noticias p{
     color: black;
     float: right;
+}
+
+main{
+    background-color: yellow;
+}
+
+.pointer:hover{
+    cursor: pointer;
 }

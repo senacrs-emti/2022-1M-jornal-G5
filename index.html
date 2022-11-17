@@ -11,57 +11,67 @@
             padding: 0;
         }
         main{
-            border: 1px solid red;
+            background-color: red;
         }
         aside{
-            border: 1px solid green;
+            background-color: green;
         }
-        .row{
-            background-color: yellow;
+        .border{
+          border: 1px solid black;
         }
     </style>
   </head>
-  <body class="d-flex w-100">
-    <div class="row w-100">
-        <main class="col-12 col-lg-9 d-flex flex-column p-3">
-            <div class="card w-100">
-                <div class="row no-gutters">
-                  <div class="col-md-4 d-flex align-items-center">
-                    <img class="w-100" src="https://people.com/thmb/FESm_yiPk29maB1wm2CRWmGlAo8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(689x169:691x171)/elon-musk-heidi-klum-halloween-110122-1-704cf9a979b54aafa4775420f46b7809.jpg" alt="...">
-                  </div>
-                  <div class="col-md-8 d-flex align-items-center">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
+  <body class="row m-0">
+    
+    <header class="col-12">
+      <div class="row d-flex justify-content-between pt-2 pb-1 px-3">
+        <h4>Jornal da Ciência</h4>
+        <div class="d-flex border">
+          <h4 class="mx-2">Interno</h4>
+          <h4 class="mx-2">Sair</h4>
+        </div>
+      </div>
+      <nav class="row d-flex justify-content-center py-2 border">
+        <div class="col-8 d-flex justify-content-around border">
+          <a href="./index.php">Home</a>
+          <a href="./index.php?page=Notícia">Notícias</a>
+          <a href="./index.php?page=Artigo de opinião">Opiniões</a>
+          <a href="./index.php?page=Crônica">Crônicas</a>
+          <a href="./index.php?page=Charge">Charges</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="col-12 col-md-9 p-2">
+      <div class="row d-flex justify-content-around">
+        <div class="col-6 col-md-12 my-2">
+          <div class="d-flex flex-column flex-md-row m-0 row border">
+            <img class="col-12 col-md-4" width="100%" src="" alt="">
+            <div class="col-12 col-md-8 d-flex flex-column justify-content-center  align-items-center  align-items-md-start">
+              <h2>Título notícia</h2>
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, non voluptatum excepturi sit facere laborum esse ut doloremque. Iusto sed assumenda, mollitia laboriosam maiores voluptatum natus laudantium ea ipsa modi.</p>
             </div>
-            <div class="row">
-                <div class="card col-5 p-0 float-left">
-                    <img src="https://people.com/thmb/FESm_yiPk29maB1wm2CRWmGlAo8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(689x169:691x171)/elon-musk-heidi-klum-halloween-110122-1-704cf9a979b54aafa4775420f46b7809.jpg" class="card-img-top w-100" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card col-5 p-0 float-right">
-                    <img src="https://people.com/thmb/FESm_yiPk29maB1wm2CRWmGlAo8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(689x169:691x171)/elon-musk-heidi-klum-halloween-110122-1-704cf9a979b54aafa4775420f46b7809.jpg" class="card-img-top w-100" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-6 my-2">
+          <div class="d-flex flex-column border">
+            <img class="col-12" width="100%" src="" alt="">
+            <div class="col-12 d-flex flex-column align-items-center">
+              <h2>Título notícia</h2>
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, non voluptatum excepturi sit facere laborum esse ut doloremque. Iusto sed assumenda, mollitia laboriosam maiores voluptatum natus laudantium ea ipsa modi.</p>
             </div>
-        </main>
-        <aside class="d-none d-lg-flex col-lg-3 flex-column align-items-center">
-             <h4>Notícias Recentes</h4>
-             <div class="card bg-transparent border-0">
-                <div class="card-body">
-                  <h5 class="card-title">Titulo</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsum, dolor distinctio enim est saepe, tenetur sequi placeat facilis reprehenderit mollitia. Quasi vitae vel id sapiente mollitia nisi debitis quis?</p>
-                </div>
-              </div>
-        </aside>
-    </div>
+          </div>
+        </div>   
+      </div>
+    </main>
+    <aside class="d-none d-md-flex col-3 flex-column align-items-center p-3">
+      <h3>Mais lidos</h3>
+      <div class="w-100 d-flex flex-column align-items-center my-2 border">
+        <h4>título</h4>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maxime, hic deserunt sint vitae saepe similique nostrum mollitia voluptatum animi porro voluptate illo impedit error distinctio culpa doloribus? Nemo, quia!</p>
+      </div>
+    </aside>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 

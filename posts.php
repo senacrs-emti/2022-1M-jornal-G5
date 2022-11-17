@@ -6,6 +6,7 @@
     <div class="noticias">
         <?php
             include_once('./includes/_config.php');
+            session_start();
 
             if (isset($_GET['id'])) {
                 $Id = $_GET['id'];
