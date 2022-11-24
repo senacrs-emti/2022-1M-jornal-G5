@@ -3,10 +3,9 @@
 ?>
 
 <main>
-    <div class="noticias">
+    <div class="noticias text-white p-3 text-justify">
         <?php
             include_once('./includes/_config.php');
-            session_start();
 
             if (isset($_GET['id'])) {
                 $Id = $_GET['id'];
@@ -54,7 +53,6 @@
                     ";
 
                     if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
-                        session_destroy();
                         echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4><hr>';
                     }else{
                         $nome = $_SESSION['nome']['Nome'];
@@ -84,9 +82,6 @@
                 header("location: index.php");
             }
         ?>
-    </div>
-    <div class="ads">
-        ADS AQUI
     </div>
 </main>
 

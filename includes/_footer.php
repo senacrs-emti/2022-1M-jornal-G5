@@ -1,5 +1,5 @@
 <footer class="col-12 text-white">
-    <div class="row py-1 px-2 d-flex justify-content-center justify-content-md-start">
+    <div class="row py-1 px-3 d-flex justify-content-center justify-content-md-start">
         <h3>Nome do Grupo</h3>
     </div>
     <div class="row d-flex flex-column flex-md-row">

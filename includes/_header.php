@@ -22,14 +22,17 @@
             if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
                 session_destroy();
             }else{
+                if($_SESSION['verify'] == 'admin'){
+                  $admin = true;
+                };
                 $conectado = true;
             };
 
             if($conectado){
               if($admin){
-                echo'<h4 class="mx-2" id="botaointerno">
+                echo'<h5 class="mx-2" id="botaointerno">
                     <a href="./postar.php?page=postar" class="text-primary text-uppercase">Interno</a>
-                    </h4>';
+                    </h5>';
               };
               echo'<h5 class="mx-2" id="botaosair">
                 <a href="./db_entrar.php?page=Sair" class="text-danger text-uppercase">Sair</a>

@@ -58,8 +58,20 @@
                     echo"</aside>";
 
                 }else{
-                    //$sql = "SELECT * FROM posts WHERE `Categoria` = '$page' ORDER BY Data_e_hora DESC";
-                    echo"aqui";
+                    $sql = "SELECT * FROM posts WHERE `Categoria` = '$page' ORDER BY Data_e_hora DESC";
+                    $result = $conexao->query($sql);
+                    while($user_data = mysqli_fetch_assoc($result)){
+                        echo"
+                        <div class='my-2 mx-3 pointer border row w-100' onclick='redirect($user_data[Id])'>
+                            <div class='d-none d-sm-block col-3'>
+                                <img width='100%' src='https://img.ibxk.com.br/2022/07/11/elon-musk-11071640095032.jpg'>
+                            </div>
+                            <div class='col-12 col-sm-9 d-flex flex-column align-items-center justify-content-center'>
+                                <h4 class='text-light'>$user_data[Titulo]</h4>
+                                <p class='text-light m-0'>$user_data[Subtitulo]</p>
+                            </div>
+                        </div>";
+                    };
                 };
             };
 
