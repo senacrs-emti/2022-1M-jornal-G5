@@ -24,3 +24,7 @@ nav div a{
 .pointer:hover{
     cursor: pointer;
 }
+
+footer{
+    background-color: rgb(32, 32, 49);
+}

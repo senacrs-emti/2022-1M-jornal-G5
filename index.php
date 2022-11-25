@@ -15,22 +15,21 @@
                         if($counter == 1){
                             echo"
                             <div class='col-12 col-sm-6 col-lg-12 my-2 pointer' onclick='redirect($user_data[Id])'>
-                                <div class='d-flex flex-column flex-lg-row m-0 row border'>
+                                <div class='d-flex flex-column flex-lg-row m-0 row row'>
                                     <img class='d-none d-sm-block col-12 col-lg-4' src='$user_data[Imagem_capa]' alt=''>
                                     <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-sm-center align-items-lg-start'>
-                                        <h2 class='my-2 text-light'>$user_data[Titulo]</h2>
-                                        <p class='text-justify text-light'>$user_data[Subtitulo]</p>
+                                        <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
                                     </div>
                                 </div>
                             </div>";
                         }else{
                             echo"
                             <div class='col-12 col-sm-6 my-2 pointer' onclick='redirect($user_data[Id])'>
-                                <div class='d-flex flex-column border'>
+                                <div class='d-flex flex-column border p-2'>
+
                                     <img class='d-none d-sm-block col-12' src='$user_data[Imagem_capa]' alt=''>
                                     <div class='col-12 d-flex flex-column align-items-sm-center'>
-                                        <h2 class='my-2 text-light'>$user_data[Titulo]</h2>
-                                        <p class='text-justify text-light'>$user_data[Subtitulo]</p>
+                                        <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
                                     </div>
                                 </div>
                             </div>";
@@ -42,16 +41,15 @@
                     </div>
                     </main>
                     <aside class='d-none d-lg-flex col-3 flex-column align-items-center py-3'>
-                    <h3 class='text-light'>Artigos mais lidos:</h3>";
+                    <h3 class='text-light'>Mais lidos:</h3>";
 
                     $sql = "SELECT * FROM posts ORDER BY Views DESC";
                     $result = $conexao->query($sql);
                     $counter = 0;
-                    while($user_data = mysqli_fetch_assoc($result) and ($counter < 4)){
+                    while($user_data = mysqli_fetch_assoc($result) and ($counter < 6)){
                         echo"
-                        <div class='w-100 d-flex flex-column align-items-center my-2 pointer border' onclick='redirect($user_data[Id])'>
-                            <h4 class='text-light'>$user_data[Titulo]</h4>
-                            <p class='text-justify text-light'>$user_data[Subtitulo]</p>
+                        <div class='w-100 d-flex flex-column align-items-center my-2  p-1 pointer border-bottom' onclick='redirect($user_data[Id])'>
+                            <h5 class='text-light'>$user_data[Titulo]</h5>
                         </div>";
                         $counter++;
                     };
@@ -73,7 +71,6 @@
                             </div>
                             <div class='col-12 col-sm-9 d-flex flex-column align-items-center justify-content-center'>
                                 <h4 class='text-light'>$user_data[Titulo]</h4>
-                                <p class='text-light m-0'>$user_data[Subtitulo]</p>
                             </div>
                         </div>";
                     };
