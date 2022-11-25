@@ -13,7 +13,7 @@
     <div class="row">
     <header class="col-12">
       <div class="row d-flex justify-content-between pt-2 pb-1 px-3">
-        <h3 class='text-light'>Jornal da Ciência</h3>
+        <h3><a class='text-light' href="./">Jornal da Ciência<a></h3>
         <div class="d-flex">
         <?php
             session_start();
@@ -50,20 +50,20 @@
         </div>
       </div>
       <nav class="row d-flex justify-content-center py-2 pb-3" id="menu_nav">
-        <div class="col-12 col-md-8 d-flex flex-column flex-md-row justify-content-around border">
-          <a href="./index.php">Home</a>
-          <a href="./index.php?page=Notícia">Notícias</a>
-          <a href="./index.php?page=Artigo de opinião">Opiniões</a>
-          <a href="./index.php?page=Crônica">Crônicas</a>
-          <a href="./index.php?page=Charge">Charges</a>
+        <div class="col-12 col-md-8 d-flex flex-column flex-md-row justify-content-around" style="font-weight: bold; font-size:120%;">
+          <a class="text-light" href="./index.php">Home</a>
+          <a class="text-light" href="./index.php?page=Notícia">Notícias</a>
+          <a class="text-light" href="./index.php?page=Artigo de opinião">Opiniões</a>
+          <a class="text-light" href="./index.php?page=Crônica">Crônicas</a>
+          <a class="text-light" href="./index.php?page=Entrevistas">Entrevistas</a>
           <?php
             if($conectado){
               if($admin){
-                echo'<a class="d-none" id="botaointerno2" href="./postar.php?page=postar">Interno</a>';
+                echo'<a class="d-none text-light" id="botaointerno2" href="./postar.php?page=postar">Interno</a>';
               };
-              echo'<a class="d-none" id="botaosair2" href="./db_entrar.php?page=Sair">Sair</a>';
+              echo'<a class="d-none text-light" id="botaosair2" href="./db_entrar.php?page=Sair">Sair</a>';
             }else{
-              echo'<a class="d-none" id="botaologin2" href="./entrar.php?page=Login">Login</a>';
+              echo'<a class="d-none text-light" id="botaologin2" href="./entrar.php?page=Login">Login</a>';
             };
           ?>
         </div>

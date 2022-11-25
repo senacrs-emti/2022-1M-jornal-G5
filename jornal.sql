@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2022 às 13:26
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.3.27
+-- Tempo de geração: 25-Nov-2022 às 03:03
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,24 +42,19 @@ CREATE TABLE `comentarios` (
 
 CREATE TABLE `posts` (
   `Id` int(11) NOT NULL,
-  `Titulo` varchar(1000) NOT NULL,
+  `Titulo` varchar(100) NOT NULL,
   `Subtitulo` varchar(1000) NOT NULL,
   `Postagem` text NOT NULL,
-  `Autor` varchar(1000) NOT NULL,
-  `Categoria` varchar(1000) NOT NULL,
-  `Data_e_hora` varchar(1000) NOT NULL,
-  `Views` int(11) NOT NULL
+  `Autor` varchar(100) NOT NULL,
+  `Categoria` varchar(100) NOT NULL,
+  `Data_e_hora` varchar(100) NOT NULL,
+  `Views` int(11) NOT NULL,
+  `Imagem_capa` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `posts`
 --
-
-INSERT INTO `posts` (`Id`, `Titulo`, `Subtitulo`, `Postagem`, `Autor`, `Categoria`, `Data_e_hora`, `Views`) VALUES
-(1, 'Tesete para testar', 'temos um subtitulo aqui', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.\r\nLorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.\r\nLorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.', 'Arthur Fagunndes Fetzner', 'Notícia', '24/11/2022 08:38:45', 5),
-(2, 'Teste dois sem subtitulo', '', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate consequuntur corrupti officiis voluptas animi, praesentium labore veritatis alias sapiente! Praesentium unde, tenetur adipisci dolorum quia id corporis animi consequatur consequuntur.', 'Arthur Fagunndes Fetzner', 'Crônica', '24/11/2022 08:39:05', 33);
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `usuarios`
@@ -70,7 +65,7 @@ CREATE TABLE `usuarios` (
   `Nascimento` varchar(1000) NOT NULL,
   `Email` varchar(1000) NOT NULL,
   `Senha` varchar(1000) NOT NULL,
-  `Permissão` varchar(1000) NOT NULL
+  `Permissão` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -78,8 +73,27 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Nome`, `Nascimento`, `Email`, `Senha`, `Permissão`) VALUES
-('Arthur Fagunndes Fetzner', '2006-08-28', 'arthurfetzner@gmail.com', '$2y$10$oETs3MQCDllDY19GFVBkKuMcqXdbW6s1cv25/3NN0uNPCjgq3Z0cO', 'admin'),
-('lucas vizeu', '2009-09-04', 'lucasvizeu123dasnovinhas@gmail.com', '$2y$10$WthCuAOL2S.WX29F9b7vJOZDTYLgWGsJT4j7NeXzNXDu1iYyZ6u3O', 'user');
+('Arthur Fagundes Fetzner', '2006-08-28', 'arthurfetzner@gmail.com', '$2y$10$gZtEC6ohq5stSHDAA629qOY4jPHIYIzxIRxmQfYgS9jJl2.u2rDP2', 'admin');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

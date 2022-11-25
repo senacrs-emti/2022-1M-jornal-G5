@@ -29,12 +29,13 @@
                         $titulo = $_POST['titulo'];
                         $subtitulo = $_POST['subtitulo'];
                         $postagem = $_POST['postagem'];
+                        $imagem = $_POST['imagem'];
                 
                         $autor = $_POST['autor'];
                         $data_e_hora = date('d/m/Y H:i:s');
                      
                         $sql = "INSERT INTO posts VALUES";
-                        $sql .= "('$id_new', '$titulo', '$subtitulo', '$postagem', '$autor', '$categoria', '$data_e_hora', '0')";
+                        $sql .= "('$id_new', '$titulo', '$subtitulo', '$postagem', '$autor', '$categoria', '$data_e_hora', '0', '$imagem')";
                         $result = $conexao->query($sql);
                     };
                     redirect_intern();
@@ -45,8 +46,9 @@
                         $subtitulo = $_POST['subtitulo'];
                         $postagem = $_POST['postagem'];
                         $autor = $_POST['autor'];
+                        $imagem = $_POST['imagem'];
                      
-                        $sql = "UPDATE posts SET Titulo='$titulo', Subtitulo='$subtitulo', Postagem='$postagem', Autor='$autor' WHERE `Id` = $Id";
+                        $sql = "UPDATE posts SET Titulo='$titulo', Subtitulo='$subtitulo', Postagem='$postagem', Autor='$autor', Imagem_capa='$imagem' WHERE `Id` = $Id";
                         $result = $conexao->query($sql);
                     };
                     redirect_intern();

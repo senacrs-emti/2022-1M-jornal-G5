@@ -2,8 +2,8 @@
     include_once './includes/_header.php';
 ?>
 
-<main>
-    <div class="noticias text-white p-3 text-justify">
+<main class = "row m-2">
+    <div class="col-12 col-md-9 text-white text-justify">
         <?php
             include_once('./includes/_config.php');
 
@@ -35,21 +35,21 @@
                         <hr>
                         $post[Postagem]
                         <hr>
-                        <h3>Mais Artigos:</h3>
+                        <h4>Mais Artigos:</h4>
                     ";
 
                     $sql = "SELECT * FROM posts WHERE `Id` != '$Id' ORDER BY Id DESC";
                     $result = $conexao->query($sql);
                     $cont = 0;
                     while(($user_data = mysqli_fetch_assoc($result)) and ($cont < 4)){
-                        echo "<article onclick='redirect($user_data[Id])'>
-                        <h2>$user_data[Titulo]</h2>
+                        echo "<article onclick='redirect($user_data[Id])' class='border my-3'>
+                        <h3>$user_data[Titulo]</h3>
                         </article>";
                         $cont = $cont + 1;
                     };
 
                     echo"
-                        <hr><h3>Comentários:</h3>
+                        <hr><h4>Comentários:</h4>
                     ";
 
                     if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
@@ -82,6 +82,9 @@
                 header("location: index.php");
             }
         ?>
+    </div>
+    <div class="d-none d-md-block col-3 border text-light p-2">
+        Ads where
     </div>
 </main>
 

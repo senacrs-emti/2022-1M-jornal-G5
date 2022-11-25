@@ -21,24 +21,6 @@ nav div a{
     width: 100%;
 }
 
-.noticias{
-    float: left;
-    display: block;
-    width: 60%;
-}
-.noticias h3{
-    color: black;
-    float: right;
-}
-.noticias p{
-    color: black;
-    float: right;
-}
-
-main{
-    background-color: yellow;
-}
-
 .pointer:hover{
     cursor: pointer;
 }

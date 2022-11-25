@@ -71,8 +71,12 @@
                                     <option value='Notícia'>Notícia</option>
                                     <option value='Artigo de opinião'>Artigo de Opinião</option>
                                     <option value='Crônica'>Crônica</option>
-                                    <option value='Charge'>Charge</option>
+                                    <option value='Entrevistas'>Entrevista</option>
                                 </select>
+                            </div>
+                            <div>
+                                <label for='imagem'>Coloque o link da imagem de capa:</label>
+                                <input type='text' name='imagem' id='imagem' required>
                             </div>
                             <div>
                                 <label for='titulo'>Digite o título:</label>
@@ -155,6 +159,10 @@
                             echo "
                                 <form action='db_posts.php?page=atualizar' method='post' id='formulario'>
                                     <input type='hidden' name='Id' value='$Id'>
+                                    <div>
+                                        <label for='imagem'>Coloque o link da imagem de capa:</label>
+                                        <input type='text' name='imagem' id='imagem' value='$post[Imagem_capa]' required>
+                                    </div>
                                     <div>
                                         <label for='titulo'>Digite o título:</label>
                                         <input type='text' name='titulo' id='titulo' value='$post[Titulo]' required>
