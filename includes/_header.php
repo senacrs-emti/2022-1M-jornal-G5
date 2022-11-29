@@ -9,9 +9,9 @@
     <script src="./assets/js/script.js"></script>
     <title>Jornal da ciência</title>
 </head>
-<body class="container-fluid bg-dark" onresize="resize()">
+<body class="container-fluid" onresize="resize()" style="background-color: #37474f;">
     <div class="row">
-    <header class="col-12" style="background-color: rgb(32, 32, 49);">
+    <header class="col-12" style="background-color: #263238;">
       <div class="row d-flex justify-content-between pt-2 pb-1 px-3">
         <h3><a class='text-light' href="./">Jornal da Ciência<a></h3>
         <div class="d-flex">

@@ -1,4 +1,4 @@
-    <footer class="col-12 text-white mt-3" style="background-color: rgb(32, 32, 49);">
+    <footer class="col-12 text-white mt-3" style="background-color: #263238;">
         <div class="row p-3 d-flex justify-content-center justify-content-md-start">
             <h3>Nome do Grupo</h3>
         </div>

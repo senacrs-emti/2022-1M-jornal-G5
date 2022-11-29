@@ -11,11 +11,12 @@
                     $sql = "SELECT * FROM posts ORDER BY Data_e_hora DESC";
                     $result = $conexao->query($sql);
                     $counter = 1;
+                    $publicacoes = [];
                     while($user_data = mysqli_fetch_assoc($result)){
                         if($counter == 1){
                             echo"
-                            <div class='col-12 col-sm-6 col-lg-12 my-2 pointer' onclick='redirect($user_data[Id])'>
-                                <div class='d-flex flex-column flex-lg-row m-0 row row'>
+                            <div role='button' class='d-sm-none d-lg-block col-12 col-sm-6 col-lg-12 mt-2' onclick='redirect($user_data[Id])'>
+                                <div class='d-flex flex-column flex-lg-row m-1 py-3 row' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
                                     <img class='d-none d-sm-block col-12 col-lg-4' src='$user_data[Imagem_capa]' alt=''>
                                     <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-sm-center align-items-lg-start'>
                                         <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
@@ -23,18 +24,31 @@
                                 </div>
                             </div>";
                         }else{
-                            echo"
-                            <div class='col-12 col-sm-6 my-2 pointer' onclick='redirect($user_data[Id])'>
-                                <div class='d-flex flex-column border p-2'>
-
-                                    <img class='d-none d-sm-block col-12' src='$user_data[Imagem_capa]' alt=''>
-                                    <div class='col-12 d-flex flex-column align-items-sm-center'>
-                                        <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
-                                    </div>
-                                </div>
-                            </div>";
+                            array_push($publicacoes, $user_data);
                         };
                         $counter++;        
+                    };
+                    $rows = ceil(count($publicacoes)/2)*2;
+                    for($i = 0; $i < count($publicacoes); $i++){
+
+                        if($rows > 0 and $i%2 == 0){
+                            echo"<div class='row w-100 mx-3 my-0 my-lg-3 d-flex justify-content-around'>";
+                        }
+                        $noticia = $publicacoes[$i];
+                        echo"
+                        <div role='button' class='col-12 col-lg-5 px-0 py-3 mt-3 mt-lg-0 d-flex flex-column justify-content-around noticia' onclick='redirect($noticia[Id])' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
+                            <div class='teste'>
+                                <img class='d-none d-sm-block col-12' src='$noticia[Imagem_capa]' alt=''>
+                            </div>
+                            <div class='row m-2 d-flex flex-column align-items-sm-center'>
+                                <h3 class='my-2 text-light text-center'>$noticia[Titulo]</h3>
+                            </div>
+                        </div>
+                        ";
+                        if($i%2 != 0 and $i != 0){
+                            echo"</div>";
+                        };
+                        $rows--;
                     };
                     
                     echo "  
@@ -46,17 +60,20 @@
                     $sql = "SELECT * FROM posts ORDER BY Views DESC";
                     $result = $conexao->query($sql);
                     $counter = 0;
-                    while($user_data = mysqli_fetch_assoc($result) and ($counter < 6)){
+                    while($user_data = mysqli_fetch_assoc($result) and ($counter < 10)){
                         echo"
-                        <div class='w-100 d-flex flex-column align-items-center my-2  p-1 pointer border-bottom' onclick='redirect($user_data[Id])'>
+                        <div class='w-100 d-flex flex-column align-items-center my-2  p-1 border-bottom' onclick='redirect($user_data[Id])'>
                             <h5 class='text-light'>$user_data[Titulo]</h5>
                         </div>";
                         $counter++;
                     };
                     echo"
                         </aside>
-                        <div class='row w-100 mx-3 p-2 border text-light'>
-                            Ads where
+                        <div class='row w-100 mx-3 p-2 text-light d-flex justify-content-around'>
+                        <img class='w-100 d-sm-none' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
                         </div>
                     ";
 
@@ -65,7 +82,7 @@
                     $result = $conexao->query($sql);
                     while($user_data = mysqli_fetch_assoc($result)){
                         echo"
-                        <div class='my-2 mx-3 pointer border row w-100' onclick='redirect($user_data[Id])'>
+                        <div role='button' class='mt-3 mx-3 py-2 row w-100' onclick='redirect($user_data[Id])' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
                             <div class='d-none d-sm-block col-3'>
                                 <img width='100%' src='$user_data[Imagem_capa]'>
                             </div>
