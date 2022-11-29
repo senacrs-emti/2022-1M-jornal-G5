@@ -18,7 +18,7 @@
                             <div role='button' class='d-sm-none d-lg-block col-12 col-sm-6 col-lg-12 mt-2' onclick='redirect($user_data[Id])'>
                                 <div class='d-flex flex-column flex-lg-row m-1 py-3 row' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
                                     <img class='d-none d-sm-block col-12 col-lg-4' src='$user_data[Imagem_capa]' alt=''>
-                                    <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-sm-center align-items-lg-start'>
+                                    <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center align-items-lg-start'>
                                         <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                     $counter = 0;
                     while($user_data = mysqli_fetch_assoc($result) and ($counter < 10)){
                         echo"
-                        <div class='w-100 d-flex flex-column align-items-center my-2  p-1 border-bottom' onclick='redirect($user_data[Id])'>
+                        <div role='button' class='w-100 d-flex flex-column align-items-center my-2  p-1 border-bottom' onclick='redirect($user_data[Id])'>
                             <h5 class='text-light'>$user_data[Titulo]</h5>
                         </div>";
                         $counter++;
