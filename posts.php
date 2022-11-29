@@ -49,11 +49,11 @@
                     };
 
                     echo"
-                        <hr><h4>Comentários:</h4>
+                        <hr><h3>Comentários:</h3>
                     ";
 
                     if((!isset($_SESSION['verify']) == true) and (!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true)){
-                        echo'<h4><a href="entrar.php?page=Login" style="color:blue;">Faça login para comentar</a></h4><hr>';
+                        echo'<h4><a href="entrar.php?page=Login" class="text-white">Faça login para comentar</a></h4><hr>';
                     }else{
                         $nome = $_SESSION['nome']['Nome'];
                         echo "
