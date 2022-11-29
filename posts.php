@@ -3,7 +3,7 @@
 ?>
 
 <main class = "row m-2">
-    <div class="col-12 col-md-9 text-white text-justify">
+    <div class="col-12 col-md-9 text-white text-justify mt-2">
         <?php
             include_once('./includes/_config.php');
 
