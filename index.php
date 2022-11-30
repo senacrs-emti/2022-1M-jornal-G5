@@ -15,7 +15,7 @@
                     while($user_data = mysqli_fetch_assoc($result)){
                         if($counter == 1){
                             echo"
-                            <div role='button' class='d-sm-none d-lg-block col-12 col-sm-6 col-lg-12 mt-2' onclick='redirect($user_data[Id])'>
+                            <div role='button' class='w-100 px-3 px-lg-5 mb-lg-3 mt-1' onclick='redirect($user_data[Id])'>
                                 <div class='d-flex flex-column flex-lg-row m-1 py-3 row' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
                                     <img class='d-none d-sm-block col-12 col-lg-4' src='$user_data[Imagem_capa]' alt=''>
                                     <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center align-items-lg-start'>

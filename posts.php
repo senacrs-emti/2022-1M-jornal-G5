@@ -42,7 +42,7 @@
                     $result = $conexao->query($sql);
                     $cont = 0;
                     while(($user_data = mysqli_fetch_assoc($result)) and ($cont < 4)){
-                        echo "<article role='button' onclick='redirect($user_data[Id])' class='my-3 p-2' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
+                        echo "<article role='button' onclick='redirect($user_data[Id])' class='my-3 p-2' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.7);'>
                         <h4 class='m-0'>$user_data[Titulo]</h4>
                         </article>";
                         $cont = $cont + 1;
