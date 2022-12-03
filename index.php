@@ -19,7 +19,7 @@
                                 <div class='d-flex flex-column flex-lg-row m-1 py-3 row' style='background-color: #607d8b; border-radius: 15px; box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.7);'>
                                     <img class='d-none d-sm-block col-12 col-lg-4' src='$user_data[Imagem_capa]' alt=''>
                                     <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center'>
-                                        <h3 class='my-2 text-light'>$user_data[Titulo]</h3>
+                                        <h3 class='my-2 text-light text-center'>$user_data[Titulo]</h3>
                                     </div>
                                 </div>
                             </div>";
@@ -70,10 +70,10 @@
                     echo"
                         </aside>
                         <div class='row w-100 mx-3 p-2 text-light d-flex justify-content-around'>
-                        <img class='w-100 d-sm-none' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
-                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
-                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
-                        <img class='d-none w-25 d-sm-block' src='http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg' alt=''>
+                        <img class='w-100 d-sm-none' src='https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png' alt=''>
+                        <img class='d-none w-25 d-sm-block' src='https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png' alt=''>
                         </div>
                     ";
 
@@ -87,7 +87,7 @@
                                 <img width='100%' src='$user_data[Imagem_capa]'>
                             </div>
                             <div class='col-12 col-sm-9 d-flex flex-column align-items-center justify-content-center'>
-                                <h4 class='text-light'>$user_data[Titulo]</h4>
+                                <h4 class='text-light text-center m-0'>$user_data[Titulo]</h4>
                             </div>
                         </div>";
                     };

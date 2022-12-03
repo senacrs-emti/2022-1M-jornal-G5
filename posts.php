@@ -84,9 +84,9 @@
         ?>
     </div>
     <div class="d-none d-md-block col-3 text-light p-2">
-        <img width='100%' src="http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg" alt="">
-        <img class='mt-3' width='100%' src="http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg" alt="">
-        <img class='mt-3' width='100%' src="http://4.bp.blogspot.com/-1BTg5fGw2zE/Upt-gxPlwcI/AAAAAAAAaqE/7nn2bnk0nb8/s1600/i+want+you+uncle+sam+tio+sam.jpg" alt="">
+        <img width='100%' src="https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png" alt="">
+        <img class='mt-3' width='100%' src="https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png" alt="">
+        <img class='mt-3' width='100%' src="https://www.udikart.com.br/wp-content/uploads/2013/06/anuncie_aqui.png" alt="">
     </div>
 </main>
 
