@@ -63,7 +63,7 @@
                     while($user_data = mysqli_fetch_assoc($result) and ($counter < 10)){
                         echo"
                         <div role='button' class='w-100 d-flex flex-column align-items-center my-2  p-1 border-bottom' onclick='redirect($user_data[Id])'>
-                            <h5 class='text-light'>$user_data[Titulo]</h5>
+                            <h5 class='text-light text-center'>$user_data[Titulo]</h5>
                         </div>";
                         $counter++;
                     };
